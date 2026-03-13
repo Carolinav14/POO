@@ -1,101 +1,133 @@
-public class Agenda {
-    String data;
-    String hora;
-    String medico;
-    String paciente;
+package com.fatec.ads;
 
-    public void consultar(){}
+public class Medico {
+    String nome;
+    String crm;
+    String telefone;
+    String especialidade;
+    String senha;
 
-    public String getData() {
-        return data;
+    public void acessar(){
+        //TODO
     }
 
-    public void setData(String data) {
-        try {
-            if (data == null) {
-                throw new Exception();
-            }
-            this.data = data;
-        } catch (Exception e) {
-            System.out.println("Ocorreu uma exceção – Valores padrões definidos");
-            this.data = "";
-            }
+    public String getNome() {
+        return nome;
     }
 
-    public String getHora() {
-        return hora;
-    }
-
-    public void setHora(String hora){
+    public void setNome(String nome) {
         try{
-            if(hora == null){
+            if(nome == null){
                 throw new Exception();
             }
-            this.hora = hora;
-        } catch (Exception e) {
+            this.nome = nome;
+        } 
+        catch 
+        {
             System.out.println("Ocorreu uma exceção – Valores padrões definidos");
-            this.hora = "";
-            }
-    }
-
-    public String getMedico() {
-        return medico;
-    }
-
-    public void setMedico(String medico) {
-        try {
-            if (medico == null) {
-                throw new Exception();
-            }
-            this.medico = medico;
-        } catch (Exception e) {
-            System.out.println("Ocorreu uma exceção – Valores padrões definidos");
-            this.medico = "";
-            }
-    }
-
-    public String getPaciente() {
-        return paciente;
-    }
-
-    public void setPaciente(String paciente){
-        try{
-            if(paciente == null){
-                throw new Exception();
-            }
-            this.paciente = paciente;
-        } catch (Exception e) {
-            System.out.println("Ocorreu uma exceção – Valores padrões definidos");
-            this.paciente = "";
+            this.nome = "";
         }
     }
 
-    public Agenda(String data, String hora, String medico, String paciente) {
-        try {
-            if (data == null || hora == null || medico == null || paciente == null) {
+
+    public String getCrm() {
+        return crm;
+    }
+
+    public void setCrm(String crm) {
+        try{
+            if(crm == null){
                 throw new Exception();
             }
-            this.data = data;
-            this.hora = hora;
-            this.medico = medico;
-            this.paciente = paciente;
-        } catch (Exception e) {
+            this.crm = crm;
+        } catch {
             System.out.println("Ocorreu uma exceção – Valores padrões definidos");
-            this.data = "";
-            this.hora = "";
-            this.medico = "";
-            this.paciente = "";
+            this.crm = "";
         }
     }
 
-    public Agenda() {
+
+    public String getTelefone() {
+        return telefone;
     }
 
+    public void setTelefone(String telefone) {
+        try{
+            if(Telefone == null){
+                throw new Exception();
+            }
+            this.telefone = telefone;
+        } catch {
+            System.out.println("Ocorreu uma exceção – Valores padrões definidos");
+            this.telefone = "";
+        }
+    }
+
+
+    public String getEspecialidade() {
+        return especialidade;
+    }
+
+    public void setEspecialidade(String especialidade) {
+        try{
+            if( especialidade == null){
+                throw new Exception();
+            }
+            this.especialidade = especialidade ;
+        } catch {
+            System.out.println("Ocorreu uma exceção – Valores padrões definidos");
+            this.especialidade = "";
+        }
+    }
+
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        try{
+            if(senha == null){
+                throw new Exception();
+            }
+            this.senha = senha;
+        } catch {
+            System.out.println("Ocorreu uma exceção – Valores padrões definidos");
+            this.senha = "";
+        }
+    }
+
+    public Medico(String nome, String crm, String telefone, String especialidade, String senha) {
+        try {
+            if (nome == null || (crm == null || crm.length()>9 )|| telefone == null || especialidade == null || senha == null) {
+                throw new Exception();
+            }
+            this.nome = nome;
+            this.crm = crm;
+            this.telefone = telefone;
+            this.especialidade = especialidade;
+            this.senha = senha;
+        } catch (Exception e) {
+            System.out.println("Ocorreu uma exceção – Valores padrões definidos");
+            this.nome = "";
+            this.crm = "";
+            this.telefone = "";
+            this.especialidade = "";
+            this.senha = "";
+        }
+    }
+
+    public Medico() {
+    }
+
+   
     public void mostrar() {
-        var s = "Agenda [getData()=" + getData() + ", getHora()=" + getHora() + ", getMedico()=" + getMedico()
-                + ", getPaciente()=" + getPaciente() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
-                + ", toString()=" + super.toString() + "]";
+       var s =  "Medico [getNome()=" + getNome() + ", getCrm()=" + getCrm() + ", getTelefone()=" + getTelefone()
+                + ", getEspecialidade()=" + getEspecialidade() + ", getSenha()=" + getSenha() + ", getClass()="
+                + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
         System.out.println(s);
     }
 
+
+    
 }
