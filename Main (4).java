@@ -1,113 +1,76 @@
 
 
-public class Recepcionista {
-    String nome;
-    String cpf;
-    String telefone;
-    String senha;
+public class Paciente {
+    private int codigo;
+    private String nome;
+    private String email;
 
-    public void acessar(){}
-
+    public int getCodigo() {
+        return codigo;
+    }
+    public void setCodigo(int codigo) {
+              try {
+            if (codigo == null) {
+                throw new Exception();
+            }
+            this.codigo = codigo;
+        } catch (Exception) {
+            System.out.println("Ocorreu uma exceção – Valores padrões definidos");
+            this.codigo = "";
+            }
+    }
+    
     public String getNome() {
         return nome;
     }
-
     public void setNome(String nome) {
-       try {
+        try {
             if (nome == null) {
                 throw new Exception();
             }
             this.nome = nome;
-        } catch (Exception e) {
+        } catch (Exception) {
             System.out.println("Ocorreu uma exceção – Valores padrões definidos");
             this.nome = "";
             }
     }
-    public String getCpf() {
-        return cpf;
+    
+    
+    
+    public String getEmail() {
+        return email;
     }
-
-    public void setCpf(String cpf) {
-        try {
-            if (cpf == null) {
-                throw new Exception();
-            }
-            this.cpf = cpf;
-        } catch (Exception e) {
-            System.out.println("Ocorreu uma exceção – Valores padrões definidos");
-            this.cpf = "";
-            }
-    }
-
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(String telefone) {
-        try {
-            if (telefone == null) {
-                throw new Exception();
-            }
-            this.telefone = telefone;
-        } catch (Exception e) {
-            System.out.println("Ocorreu uma exceção – Valores padrões definidos");
-            this.telefone = "";
-            }
-    }
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        try {
-            if (senha == null) {
-                throw new Exception();
-            }
-            this.senha = senha;
-        } catch (Exception) {
-            System.out.println("Ocorreu uma exceção – Valores padrões definidos");
-            this.senha = "";
-            }
-    }
-
-    public Recepcionista(String nome, String cpf, String telefone, String senha) {
-        
-    }
-try {
-            if (nome == null || cpf == null || telefone == null || senha == null) {
-                throw new Exception();
-            }
-		this.nome = nome;
-        	this.cpf = cpf;
-        	this.telefone = telefone;
-        	this.senha = senha;
-        } catch (Exception e) {
-            System.out.println("Ocorreu uma exceção – Valores padrões definidos");
-		this.nome = "";
-        	this.cpf = "";
-        	this.telefone = "";
-        	this.senha = "";
+    public void setEmail(String email) throws Exception {
+        if(email==null || email.length()<6 || !email.contains("@")){
+            throw new Exception("Email completo Obrigatorio !");
+        } else {
+            this.email = email;
         }
     }
 
+    public Paciente(){
+        this.codigo=0;
+        this.nome="";
+        this.email="";
+    }
+    public Paciente(int pCodigo, String pNome, String pEmail) throws Exception{
+        setCodigo(pCodigo);
+        setEmail(pEmail);
+        setNome(pNome);
+    }
 
-
-
-
-
-
-
-    public Recepcionista() {
+    public void mostrar() {
+        var s = "Paciente [getCodigo()=" + getCodigo() + ", getNome()=" + getNome() + ", getEmail()=" + getEmail()
+                + ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
+                + "]";
+        System.out.println(s);        
     }
 
    
-    public void mostrar() {
-        var s = "Recepcionista [getNome()=" + getNome() + ", getCpf()=" + getCpf() + ", getTelefone()=" + getTelefone()
-                + ", getSenha()=" + getSenha() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
-                + ", toString()=" + super.toString() + "]";
-        System.out.println(s);
-    };
-
-    
+   
 }
+
+
+
+
+
